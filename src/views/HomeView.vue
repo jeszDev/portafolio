@@ -11,7 +11,7 @@ import DeveloperTerminal from '@/components/DeveloperTerminal.vue'
     <h1>Bienvenido</h1>
   </div>
 
-  <div>
+  <div class="">
     <DeveloperTerminal />
   </div>
 </template>
