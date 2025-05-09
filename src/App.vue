@@ -9,7 +9,7 @@ import ContactIcon from './icons/ContactIcon.vue'
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-4 h-screen">
+  <div class="grid grid-cols-3 gap-4 h-screen bg-black">
     <div class="flex items-center justify-around">
       <div>
         <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
