@@ -1,26 +1,71 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+import HomeIcon from './icons/HomeIcon.vue'
+import AboutIcon from './icons/AboutIcon.vue'
+import ProjectsIcon from './icons/ProjectsIcon.vue'
+import ContactIcon from './icons/ContactIcon.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="grid grid-cols-3 gap-4 h-screen">
+    <div class="flex items-center justify-around">
+      <div>
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+      </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="Bienvenido" />
+      <div>
+        <!-- <HelloWorld msg="Bienvenido" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav> -->
+
+        <nav class="w-64">
+          <div class="flex flex-col space-y-1">
+            <RouterLink
+              to="/"
+              class="px-4 py-3 text-white hover:text-[hsla(160,100%,37%,1)] flex items-center text-2xl"
+            >
+              <span class="px-4"><HomeIcon /></span>
+              Inicio
+            </RouterLink>
+            <RouterLink
+              to="/about"
+              class="px-4 py-3 text-white hover:text-[hsla(160,100%,37%,1)] flex items-center text-2xl"
+            >
+              <span class="px-4"><AboutIcon /></span>
+              Sobre mí
+            </RouterLink>
+            <a
+              href="#"
+              class="px-4 py-3 text-white hover:text-[hsla(160,100%,37%,1)] flex items-center text-2xl"
+            >
+              <span class="px-4"><ProjectsIcon /></span>
+              Proyectos
+            </a>
+            <a
+              href="#"
+              class="px-4 py-3 text-white hover:text-[hsla(160,100%,37%,1)] flex items-center text-2xl"
+            >
+              <span class="px-4"><ContactIcon /></span>
+              Contacto
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
-  </header>
 
-  <RouterView />
+    <div class="col-span-2">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style scoped>
+/*
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -82,4 +127,5 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+*/
 </style>
