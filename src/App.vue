@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HomePage from './pages/HomePage.vue';
-import AboutPage from './pages/AboutPage.vue';
-import ProjectsPage from './pages/ProjectsPage.vue';
-import ContactPage from './pages/ContactPage.vue';
+import HomePage from './sections/HomePage.vue';
+import AboutPage from './sections/AboutPage.vue';
+import ProjectsPage from './sections/ProjectsPage.vue';
+import ContactPage from './sections/ContactPage.vue';
 
 import HomeIcon from './icons/HomeIcon.vue';
 import AboutIcon from './icons/AboutIcon.vue';
