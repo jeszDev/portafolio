@@ -15,13 +15,11 @@
     <p>Mi objetivo es seguir creando soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes hacia arquitecturas modernas.</p>
   </div>
 
-    <DeveloperTerminal />
   </div>
 </template>
 
 <script setup lang="ts">
 import TitleSection from '../components/TitleSection.vue';
-import DeveloperTerminal from '@/components/DeveloperTerminal.vue';
 </script>
 
 <style scoped></style>
