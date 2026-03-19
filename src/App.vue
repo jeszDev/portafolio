@@ -44,7 +44,7 @@
         class="section"
         :ref="(el) => setSectionRef(el, 'section1')"
       >
-        <HomePage />
+        <AboutMePage />
       </section>
 
       <section
@@ -77,7 +77,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-import HomePage from './sections/HomePage.vue'
+import HomePage from './sections/AboutMePage.vue'
 import AboutPage from './sections/AboutPage.vue'
 import ProjectsPage from './sections/ProjectsPage.vue'
 import ContactPage from './sections/ContactPage.vue'
@@ -159,6 +159,7 @@ onBeforeUnmount(() => {
   font-size: 1rem;
   color: rgba(255,255,255,0.6);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .nav-item:hover {
