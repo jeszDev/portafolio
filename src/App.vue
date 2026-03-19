@@ -1,7 +1,7 @@
 <template>
   <div class="flex bg-neutral-950 text-white">
     <!-- SIDEBAR -->
-    <aside class="w-64 h-screen fixed left-0 top-0 flex flex-col justify-between p-6 border-r border-white/10">
+    <aside class="w-64 h-screen flex flex-col justify-between p-6 border-r border-white/10">
 
       <!-- Logo -->
       <div class="flex flex-col items-center gap-4">
@@ -37,7 +37,7 @@
     <!-- CONTENT -->
     <main
       ref="contentContainer"
-      class="ml-64 w-full h-screen overflow-y-auto scroll-smooth"
+      class="w-full h-screen overflow-y-auto scroll-smooth"
     >
       <section
         id="section0"
