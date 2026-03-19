@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import DeveloperTerminal from '@/components/DeveloperTerminal.vue';
 const scrollToProjects = () => {
   const el = document.getElementById('section3')
   el?.scrollIntoView({ behavior: 'smooth' })
@@ -10,17 +11,17 @@ const scrollToProjects = () => {
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
       <!-- TEXT -->
-      <div class="space-y-6">
+      <div class="space-y-6" data-aos="fade-up">
         <p class="text-sm text-emerald-400 tracking-widest uppercase">
           Frontend Developer
         </p>
 
-        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="300">
           Hola, soy
           <span class="gradient-text">JeszDev</span>
         </h1>
 
-        <p class="text-white/70 text-lg leading-relaxed">
+        <p class="text-white/70 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="1000">
           Construyo interfaces modernas, rápidas y con experiencia de usuario que realmente se siente.
         </p>
 
@@ -29,6 +30,7 @@ const scrollToProjects = () => {
           <button
             @click="scrollToProjects"
             class="btn-primary"
+            data-aos="fade-up" data-aos-delay="300"
           >
             Ver proyectos
           </button>
@@ -36,6 +38,7 @@ const scrollToProjects = () => {
           <button
             @click="$emit('scrollToContact')"
             class="btn-secondary"
+            data-aos="fade-up" data-aos-delay="400"
           >
             Contacto
           </button>
@@ -43,18 +46,14 @@ const scrollToProjects = () => {
       </div>
 
       <!-- VISUAL -->
+      <!-- <div class="termina-wrapper">
+        <DeveloperTerminal />
+      </div> -->
+
       <div class="relative flex justify-center items-center">
+        <div class="glow-bg"></div>
 
-        <!-- Glow -->
-        <div class="absolute w-72 h-72 bg-emerald-500/20 blur-3xl rounded-full"></div>
-
-        <!-- Card -->
-        <div class="terminal">
-          <p><span class="text-emerald-400">$</span> npm run dev</p>
-          <p class="text-white/70">Iniciando proyecto...</p>
-          <p class="text-white/70">✔ Compilado correctamente</p>
-          <p class="text-emerald-400">Servidor listo 🚀</p>
-        </div>
+        <DeveloperTerminal />
       </div>
 
     </div>
@@ -102,5 +101,28 @@ const scrollToProjects = () => {
   width: 300px;
   font-family: monospace;
   box-shadow: 0 0 40px rgba(16,185,129,0.2);
+}
+
+.terminal-wrapper {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  animation: terminalEnter 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes terminalEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.glow-bg {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(16,185,129,0.25), transparent);
+  filter: blur(80px);
+  z-index: -1;
 }
 </style>
