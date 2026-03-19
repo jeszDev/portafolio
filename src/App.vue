@@ -144,28 +144,30 @@ onBeforeUnmount(() => {
     <div class="">
       <!-- <RouterView /> -->
 
-      <div class="flex-1 ml-64 h-screen overflow-y-auto scroll-smooth" id="content-column">
+      <div ref="contentContainer" class="flex-1 ml-64 h-screen overflow-y-auto scroll-smooth" id="content-column">
         <section
           id="section1"
           class="min-h-screen p-10 grid grid-rows-[10%_90%] gap-4 scroll-snap-section"
-          ref="setSectionRef(el, 'section1')"
+          :ref="(el) => setSectionRef(el, 'section1')"
         >
           <HomePage />
         </section>
         <section
           id="section2"
           class="min-h-screen p-10 grid grid-rows-[10%_90%] gap-4 scroll-snap-section"
+          :ref="(el) => setSectionRef(el, 'section2')"
         >
           <AboutPage />
         </section>
         <section
           id="section3"
           class="min-h-screen p-10 grid grid-rows-[10%_90%] gap-4 scroll-snap-section"
+          :ref="(el) => setSectionRef(el, 'section3')"
         >
           <ProjectsPage />
         </section>
         <section
-          id="section3"
+          id="section4"
           class="min-h-screen p-10 grid grid-rows-[10%_90%] gap-4 scroll-snap-section"
         >
           <ContactPage />
