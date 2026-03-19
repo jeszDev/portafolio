@@ -40,13 +40,14 @@ interface Developer {
 
 const fullCode = `const developer = {
   name: 'Jessie Josue Canchola Romero',
+  nickname: 'JeszDev',
   role: 'Full stack developer',
   skills: [
     'Laravel',
     'Livweire',
     'JavaScript',
     'Alpine Js',
-    'Vue Js',
+    'Vue 3',
     'CSS/Tailwind',
     'HTML5',
   ],
@@ -104,7 +105,7 @@ onMounted(() => {
   }, 500) as unknown as number;
 
   // Iniciar animación de escritura
-  animationInterval = setInterval(typeNextLine, 40) as unknown as number;
+  animationInterval = setInterval(typeNextLine, 25) as unknown as number;
 });
 
 onUnmounted(() => {
@@ -115,7 +116,13 @@ onUnmounted(() => {
 
 <style scoped>
 .code-container {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow:
+    0 0 60px rgba(16,185,129,0.15),
+    0 10px 40px rgba(0,0,0,0.6);
 }
 
 .code-content {
