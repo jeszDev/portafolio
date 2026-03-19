@@ -40,6 +40,14 @@
       class="ml-64 w-full h-screen overflow-y-auto scroll-smooth"
     >
       <section
+        id="section0"
+        class="section"
+        :ref="(el) => setSectionRef(el, 'section1')"
+      >
+        <HomePage />
+      </section>
+
+      <section
         id="section1"
         class="section"
         :ref="(el) => setSectionRef(el, 'section1')"
@@ -77,7 +85,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-import HomePage from './sections/AboutMePage.vue'
+import HomePage from './sections/HomePage.vue'
+import AboutMePage from './sections/AboutMePage.vue'
 import AboutPage from './sections/AboutPage.vue'
 import ProjectsPage from './sections/ProjectsPage.vue'
 import ContactPage from './sections/ContactPage.vue'
