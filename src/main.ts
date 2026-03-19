@@ -1,6 +1,9 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+import { createApp, onMounted } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -12,3 +15,5 @@ app.use(createPinia())
 // app.use(router)
 
 app.mount('#app')
+
+AOS.init();
