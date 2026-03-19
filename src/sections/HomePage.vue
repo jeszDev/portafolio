@@ -11,34 +11,34 @@ const scrollToProjects = () => {
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
       <!-- TEXT -->
-      <div class="space-y-6" data-aos="fade-up">
-        <p class="text-sm text-emerald-400 tracking-widest uppercase">
-          Frontend Developer
-        </p>
-
-        <h1 class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="300">
-          Hola, soy
-          <span class="gradient-text">JeszDev</span>
-        </h1>
-
-        <p class="text-white/70 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="1000">
-          Construyo interfaces modernas, rápidas y con experiencia de usuario que realmente se siente.
-        </p>
+      <div class="space-y-6" data-aos="fade-up" data-aos-duration="400">
+        <div>
+          <p class="text-sm text-emerald-400 tracking-widest uppercase">
+            Frontend Developer
+          </p>
+          <h1 class="text-5xl md:text-6xl font-bold leading-tight" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
+            Hola, soy
+            <span class="gradient-text">JeszDev</span>
+          </h1>
+          <p class="text-white/70 text-lg leading-relaxed" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="800">
+            Construyo interfaces modernas, rápidas y con experiencia de usuario que realmente se siente.
+          </p>
+        </div>
 
         <!-- BUTTONS -->
-        <div class="flex gap-4">
+        <div class="flex gap-4 mt-5 mb-5">
           <button
             @click="scrollToProjects"
-            class="btn-primary"
-            data-aos="fade-up" data-aos-delay="300"
+            class="btn-primary cursor-pointer"
+            data-aos="fade-up" data-aos-delay="400"
           >
             Ver proyectos
           </button>
 
           <button
             @click="$emit('scrollToContact')"
-            class="btn-secondary"
-            data-aos="fade-up" data-aos-delay="400"
+            class="btn-secondary cursor-pointer"
+            data-aos="fade-up" data-aos-delay="500"
           >
             Contacto
           </button>
@@ -50,7 +50,7 @@ const scrollToProjects = () => {
         <DeveloperTerminal />
       </div> -->
 
-      <div class="relative flex justify-center items-center">
+      <div class="relative flex justify-center items-center"  data-aos="zoom-in" data-aos-delay="1300" data-aos-duration="1100">
         <div class="glow-bg"></div>
 
         <DeveloperTerminal />
