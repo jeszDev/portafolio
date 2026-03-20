@@ -1,8 +1,9 @@
 <template>
   <div class="flex bg-neutral-950 text-white">
     <!-- SIDEBAR -->
-    <aside class="w-64 h-screen flex flex-col justify-between p-6 border-r border-white/10">
-
+    <aside
+      class="w-64 h-screen flex flex-col fixed justify-between p-6 border-r border-white/10 bg-neutral-950 text-white"
+    >
       <!-- Logo -->
       <div class="flex flex-col items-center gap-4">
         <img src="@/assets/logo.svg" class="w-20 opacity-80" />
@@ -29,53 +30,32 @@
       </nav>
 
       <!-- Footer -->
-      <div class="text-xs text-white/40 text-center">
-        © 2026
-      </div>
+      <div class="text-xs text-white/40 text-center">© 2026</div>
     </aside>
 
     <!-- CONTENT -->
     <main
       ref="contentContainer"
-      class="w-full h-screen overflow-y-auto scroll-smooth"
+      id="scroll-container"
+      class="w-full h-screen scroll-smooth ml-64! bg-neutral-950! text-white"
     >
-      <section
-        id="section0"
-        class="section"
-        :ref="(el) => setSectionRef(el, 'section1')"
-      >
+      <section id="section0" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
       </section>
 
-      <section
-        id="section1"
-        class="section"
-        :ref="(el) => setSectionRef(el, 'section1')"
-      >
+      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <AboutMePage />
       </section>
 
-      <section
-        id="section2"
-        class="section"
-        :ref="(el) => setSectionRef(el, 'section2')"
-      >
+      <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section2')">
         <AboutPage />
       </section>
 
-      <section
-        id="section3"
-        class="section"
-        :ref="(el) => setSectionRef(el, 'section3')"
-      >
+      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section3')">
         <ProjectsPage />
       </section>
 
-      <section
-        id="section4"
-        class="section"
-        :ref="(el) => setSectionRef(el, 'section4')"
-      >
+      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section4')">
         <ContactPage />
       </section>
     </main>
@@ -83,81 +63,79 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
 
-import HomePage from './sections/HomePage.vue'
-import AboutMePage from './sections/AboutMePage.vue'
-import AboutPage from './sections/AboutPage.vue'
-import ProjectsPage from './sections/ProjectsPage.vue'
-import ContactPage from './sections/ContactPage.vue'
+import HomePage from './sections/HomePage.vue';
+import AboutMePage from './sections/AboutMePage.vue';
+import AboutPage from './sections/AboutPage.vue';
+import ProjectsPage from './sections/ProjectsPage.vue';
+import ContactPage from './sections/ContactPage.vue';
 
-import HomeIcon from './icons/HomeIcon.vue'
-import AboutIcon from './icons/AboutIcon.vue'
-import ProjectsIcon from './icons/ProjectsIcon.vue'
-import ContactIcon from './icons/ContactIcon.vue'
+import HomeIcon from './icons/HomeIcon.vue';
+import AboutIcon from './icons/AboutIcon.vue';
+import ProjectsIcon from './icons/ProjectsIcon.vue';
+import ContactIcon from './icons/ContactIcon.vue';
+import AOS from 'aos';
 
 interface SectionRefs {
-  [key: string]: HTMLElement | null
+  [key: string]: HTMLElement | null;
 }
 
-const contentContainer = ref<HTMLElement | null>(null)
-const sectionRefs = ref<SectionRefs>({})
-const activeSection = ref('section1')
+const contentContainer = ref<HTMLElement | null>(null);
+const sectionRefs = ref<SectionRefs>({});
+const activeSection = ref('section1');
 
 const setSectionRef = (el: HTMLElement | null, id: string) => {
-  sectionRefs.value[id] = el
-}
+  sectionRefs.value[id] = el;
+};
 
 const scrollToSection = (id: string) => {
-  const section = sectionRefs.value[id]
+  const section = sectionRefs.value[id];
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
-    activeSection.value = id
+    section.scrollIntoView({ behavior: 'smooth' });
+    activeSection.value = id;
   }
-}
+};
 
 const handleScroll = () => {
-  if (!contentContainer.value) return
+  if (!contentContainer.value) return;
 
-  const scrollPosition =
-    contentContainer.value.scrollTop + window.innerHeight / 2
+  const scrollPosition = contentContainer.value.scrollTop + window.innerHeight / 2;
 
   for (const [id, section] of Object.entries(sectionRefs.value)) {
-    if (!section) continue
+    if (!section) continue;
 
-    const top = section.offsetTop
-    const bottom = top + section.offsetHeight
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
 
     if (scrollPosition >= top && scrollPosition <= bottom) {
-      activeSection.value = id
-      break
+      activeSection.value = id;
+      break;
     }
   }
-}
+};
 
-let timeout: ReturnType<typeof setTimeout>
+let timeout: ReturnType<typeof setTimeout>;
 
 const onScroll = () => {
-  clearTimeout(timeout)
-  timeout = setTimeout(handleScroll, 50)
-}
+  clearTimeout(timeout);
+  timeout = setTimeout(handleScroll, 50);
+};
 
 onMounted(() => {
-  contentContainer.value?.addEventListener('scroll', onScroll)
-  handleScroll()
-})
+  contentContainer.value?.addEventListener('scroll', onScroll);
+  handleScroll();
+});
 
 onBeforeUnmount(() => {
-  contentContainer.value?.removeEventListener('scroll', onScroll)
-})
+  contentContainer.value?.removeEventListener('scroll', onScroll);
+});
 </script>
 
 <style scoped>
 .section {
-  min-height: 100vh;
-  padding: 4rem;
-  display: flex;
-  align-items: center;
+  background-color: black;
+  @apply min-h-[100vh] p-[4rem] flex items-center;
 }
 
 /* NAV ITEM PRO */
@@ -166,7 +144,7 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: 10px;
   font-size: 1rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease;
   cursor: pointer;
 }

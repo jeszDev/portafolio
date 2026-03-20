@@ -1,19 +1,23 @@
-import './assets/main.css'
+import './assets/main.css';
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import { createApp, onMounted } from 'vue'
-import { createPinia } from 'pinia'
+AOS.init({
+  duration: 800,
+  once: true,
+  easing: 'ease-out-cubic',
+});
 
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+
+import App from './App.vue';
 // import router from './router'
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(createPinia())
+app.use(createPinia());
 // app.use(router)
 
-app.mount('#app')
-
-AOS.init();
+app.mount('#app');
