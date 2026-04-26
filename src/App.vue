@@ -36,17 +36,17 @@ const sectionRefs = ref<SectionRefs>({});
 const activeSection = ref<string>(menuItems[0].id);
 
 // Configurar las refs de las secciones
-const setSectionRef = (el: HTMLElement | null, id: string): void => {
-  console.log('llega');
+// const setSectionRef = (el: HTMLElement | null, id: string): void => {
+//   console.log('llega');
 
-  sectionRefs.value[id] = el;
-};
+//   sectionRefs.value[id] = el;
+// };
 
 // Obtener clase CSS para la sección (alternar colores)
-const getSectionClass = (id: string): string => {
-  const index = menuItems.findIndex((item) => item.id === id);
-  return index % 2 === 0 ? 'bg-gray-50' : 'bg-white';
-};
+// const getSectionClass = (id: string): string => {
+//   const index = menuItems.findIndex((item) => item.id === id);
+//   return index % 2 === 0 ? 'bg-gray-50' : 'bg-white';
+// };
 
 // Función para hacer scroll a una sección
 const scrollToSection = (sectionId: string): void => {
