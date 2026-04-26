@@ -1,9 +1,10 @@
 <template>
   <h1
     class="md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mb-10 tracking-wider uppercase"
+    style="font-family: 'Lobster', cursive;"
   >
     <span class="text-blue-400">&lt;</span>
-    {{ title }}
+    <span>{{ title }}</span>
     <span class="text-blue-400 animate-pulse intense-blink">/</span>
     <span class="text-blue-400">&gt;</span>
   </h1>
