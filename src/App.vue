@@ -6,8 +6,9 @@
     >
       <!-- Logo -->
       <div class="flex flex-col items-center gap-4">
-        <img src="@/assets/logo.svg" class="w-20 opacity-80" />
-        <h1 class="text-lg font-bold tracking-wide">JeszDev</h1>
+        <!-- <img src="@/assets/logo.svg" class="w-20 opacity-80" /> -->
+        <!-- <h1 class="text-lg font-bold tracking-wide">JeszDev</h1> -->
+        <LogoTitle />
       </div>
 
       <!-- NAV -->
@@ -64,6 +65,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
+
+import LogoTitle from '@/components/LogoTitle.vue';
 
 import HomePage from './sections/HomePage.vue';
 import AboutMePage from './sections/AboutMePage.vue';
