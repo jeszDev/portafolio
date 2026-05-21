@@ -93,7 +93,7 @@
     <main
       ref="contentContainer"
       id="scroll-container"
-      class="w-full h-screen scroll-smooth md:!ml-64 !bg-neutral-950 text-white"
+      class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white"
     >
       <section id="section0" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
