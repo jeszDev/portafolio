@@ -2,7 +2,7 @@
   <div class="flex bg-neutral-950 text-white">
     <!-- SIDEBAR -->
     <aside
-      class="w-64 h-screen flex flex-col fixed justify-between p-6 border-r border-white/10 bg-neutral-950 text-white"
+      class="w-64 h-screen hidden md:flex md:flex-col fixed justify-between p-6 border-r border-white/10 bg-neutral-950 text-white"
     >
       <!-- Logo -->
       <div class="flex flex-col items-center gap-4">
@@ -93,7 +93,7 @@
     <main
       ref="contentContainer"
       id="scroll-container"
-      class="w-full h-screen scroll-smooth ml-64! bg-neutral-950! text-white"
+      class="w-full h-screen scroll-smooth md:!ml-64 !bg-neutral-950 text-white"
     >
       <section id="section0" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
