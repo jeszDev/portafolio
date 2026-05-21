@@ -12,23 +12,65 @@
       </div>
 
       <!-- NAV -->
-      <nav class="flex flex-col gap-6">
-        <button @click="scrollToSection('section1')" class="nav-item">
-          <HomeIcon /> <span>Inicio</span>
-        </button>
+      <nav class="flex flex-col gap-4 p-4 border border-slate-800 bg-slate-950/60 backdrop-blur-md rounded-xl max-w-xs shadow-[0_0_20px_rgba(0,0,0,0.8)]">
 
-        <button @click="scrollToSection('section2')" class="nav-item">
-          <AboutIcon /> <span>Sobre mí</span>
-        </button>
+    <div class="text-[10px] font-mono text-cyan-500/60 tracking-[0.3em] uppercase px-3 mb-2 select-none">
+      :: SELECT_STAGE
+    </div>
 
-        <button @click="scrollToSection('section3')" class="nav-item">
-          <ProjectsIcon /> <span>Proyectos</span>
-        </button>
+    <button @click="scrollToSection('section1')" class="nav-gamer-item group">
+      <div class="nav-gamer-bg"></div>
+      <div class="flex items-center gap-3 relative z-10">
+        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+          <HomeIcon />
+        </span>
+        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
+          Inicio
+        </span>
+      </div>
+      <span class="nav-gamer-tag">01</span>
+    </button>
 
-        <button @click="scrollToSection('section4')" class="nav-item">
-          <ContactIcon /> <span>Contacto</span>
-        </button>
-      </nav>
+    <button @click="scrollToSection('section2')" class="nav-gamer-item group">
+      <div class="nav-gamer-bg"></div>
+      <div class="flex items-center gap-3 relative z-10">
+        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+          <AboutIcon />
+        </span>
+        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
+          Sobre mí
+        </span>
+      </div>
+      <span class="nav-gamer-tag">02</span>
+    </button>
+
+    <button @click="scrollToSection('section3')" class="nav-gamer-item group">
+      <div class="nav-gamer-bg"></div>
+      <div class="flex items-center gap-3 relative z-10">
+        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+          <ProjectsIcon />
+        </span>
+        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
+          Proyectos
+        </span>
+      </div>
+      <span class="nav-gamer-tag">03</span>
+    </button>
+
+    <button @click="scrollToSection('section4')" class="nav-gamer-item group">
+      <div class="nav-gamer-bg"></div>
+      <div class="flex items-center gap-3 relative z-10">
+        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+          <ContactIcon />
+        </span>
+        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
+          Contacto
+        </span>
+      </div>
+      <span class="nav-gamer-tag">04</span>
+    </button>
+
+  </nav>
 
       <!-- Footer -->
       <div class="text-xs text-white/40 text-center">© 2026</div>
@@ -156,4 +198,75 @@ onBeforeUnmount(() => {
   color: white;
   transform: translateX(5px);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* Base del botón con estilo de celda de interfaz de juego */
+.nav-gamer-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-between;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(15, 23, 42, 0.4);
+  border-left: 3px solid #334155; /* Borde izquierdo inactivo */
+  clip-path: polygon(0 0, 92% 0, 100% 25%, 100% 100%, 8% 100%, 0 75%);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Fondo animado tecnológico en el hover */
+.nav-gamer-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.15) 0%, transparent 100%);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.25s ease;
+  z-index: 1;
+}
+
+/* Comportamiento Hover general del botón */
+.nav-gamer-item:hover {
+  border-left-color: #22d3ee; /* Cambia al cian neón */
+  transform: translateX(4px); /* Pequeño desplazamiento hacia adelante */
+  box-shadow: -5px 0 15px rgba(34, 211, 238, 0.2);
+}
+
+.nav-gamer-item:hover .nav-gamer-bg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Efecto de parpadeo leve en los íconos al pasar el cursor */
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-gamer-item:hover .icon-container {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.6));
+}
+
+/* Pequeñas etiquetas numéricas (Estilo índice de inventario) */
+.nav-gamer-tag {
+  position: relative;
+  z-index: 10;
+  font-size: 10px;
+  color: #64748b;
+  margin-left: auto; /* Lo empuja totalmente a la derecha */
+  transition: color 0.2s ease;
+}
+
+.nav-gamer-item:hover .nav-gamer-tag {
+  color: #22d3ee;
+  text-shadow: 0 0 4px rgba(34, 211, 238, 0.5);
+}
+
+
 </style>
