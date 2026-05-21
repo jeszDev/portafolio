@@ -18,7 +18,7 @@
       :: SELECT_STAGE
     </div>
 
-    <button @click="scrollToSection('section1')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section1')" class="nav-gamer-item group cursor-pointer">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
@@ -31,7 +31,7 @@
       <span class="nav-gamer-tag">01</span>
     </button>
 
-    <button @click="scrollToSection('section2')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section2')" class="nav-gamer-item group cursor-pointer">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
@@ -44,7 +44,7 @@
       <span class="nav-gamer-tag">02</span>
     </button>
 
-    <button @click="scrollToSection('section3')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section3')" class="nav-gamer-item group cursor-pointer">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
@@ -57,7 +57,7 @@
       <span class="nav-gamer-tag">03</span>
     </button>
 
-    <button @click="scrollToSection('section4')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section4')" class="nav-gamer-item group cursor-pointer">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
@@ -70,7 +70,7 @@
       <span class="nav-gamer-tag">04</span>
     </button>
 
-    <button @click="scrollToSection('section5')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section5')" class="nav-gamer-item group cursor-pointer">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
