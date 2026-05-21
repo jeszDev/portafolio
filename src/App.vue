@@ -48,6 +48,19 @@
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+          <AboutIcon />
+        </span>
+        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
+          Sobre mí
+        </span>
+      </div>
+      <span class="nav-gamer-tag">02</span>
+    </button>
+
+    <button @click="scrollToSection('section4')" class="nav-gamer-item group">
+      <div class="nav-gamer-bg"></div>
+      <div class="flex items-center gap-3 relative z-10">
+        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
           <ProjectsIcon />
         </span>
         <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
@@ -57,7 +70,7 @@
       <span class="nav-gamer-tag">03</span>
     </button>
 
-    <button @click="scrollToSection('section4')" class="nav-gamer-item group">
+    <button @click="scrollToSection('section5')" class="nav-gamer-item group">
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
@@ -86,19 +99,23 @@
         <HomePage />
       </section>
 
-      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section1')">
+      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section2')">
         <AboutMePage />
       </section>
 
-      <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section2')">
+      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section3')">
+        <ExperiencePage />
+      </section>
+
+      <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section4')">
         <AboutPage />
       </section>
 
-      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section3')">
+      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section5')">
         <ProjectsPage />
       </section>
 
-      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section4')">
+      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section6')">
         <ContactPage />
       </section>
     </main>
@@ -112,6 +129,7 @@ import LogoTitle from '@/components/LogoTitle.vue';
 
 import HomePage from './sections/HomePage.vue';
 import AboutMePage from './sections/AboutMePage.vue';
+import ExperiencePage from './sections/ExperiencePage.vue';
 import AboutPage from './sections/AboutPage.vue';
 import ProjectsPage from './sections/ProjectsPage.vue';
 import ContactPage from './sections/ContactPage.vue';
