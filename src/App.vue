@@ -85,8 +85,12 @@
 
   </nav>
 
-      <!-- Footer -->
-      <div class="text-xs text-white/40 text-center">© 2026</div>
+      <footer class="mt-auto pt-6">
+        <div class="flex items-center justify-center gap-2 font-mono text-[10px] text-slate-400 select-none">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"></span>
+          <span class="tracking-wider">© 2026 // SYSTEM_ACTIVE</span>
+        </div>
+      </footer>
     </aside>
 
     <!-- CONTENT -->
