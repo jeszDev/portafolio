@@ -1,32 +1,16 @@
 <template>
-  <h1
-    class="md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mb-10 tracking-wider uppercase"
-    style="font-family: 'Lobster', cursive;"
-  >
-    <span class="text-blue-400">&lt;</span>
-    <span>{{ title }}</span>
-    <span class="text-blue-400 animate-pulse intense-blink">/</span>
-    <span class="text-blue-400">&gt;</span>
-  </h1>
-  <!-- <h1
-    class="font-['Press_Start_2P'] md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mb-10 tracking-wider"
-  >
-    <span class="font-['Syne_Mono'] text-blue-400">&lt;</span>
-    {{ title }}
-    <span class="font-['Syne_Mono'] text-blue-400 animate-pulse">/</span>
-    <span class="font-['Syne_Mono'] text-blue-400">&gt;</span>
-  </h1> -->
+  <div class="mb-10 text-left">
+    <span class="text-[10px] font-mono text-cyan-400/50 block tracking-[0.3em] uppercase mb-1">
+      // LOCATION: {{ title }}
+    </span>
 
-  <!-- <div class="crt-effect bg-black p-8 rounded-lg border-2 border-purple-500 inline-block">
-    <h1
-      class="font-['Press_Start_2P'] text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-fuchsia-500 tracking-tight text-flicker"
-    >
-      <span class="text-cyan-300">&lt;</span>
+    <h1 class="font-arcade text-xl md:text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 uppercase flex items-center gap-2">
+      <span class="text-cyan-500 font-mono">&lt;</span>
       <span class="text-white">{{ title }}</span>
-      <span class="text-fuchsia-400 animate-pulse">/</span>
-      <span class="text-cyan-300">&gt;</span>
+      <span class="text-fuchsia-500 font-mono animate-ping text-xs">■</span>
+      <span class="text-cyan-500 font-mono">&gt;</span>
     </h1>
-  </div> -->
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -38,13 +22,7 @@ defineProps<Props>();
 </script>
 
 <style scoped>
-@keyframes intense-blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.2;
-  }
+.font-arcade {
+  font-family: 'Press Start 2P', cursive;
 }
 </style>
