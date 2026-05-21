@@ -11,32 +11,36 @@
           <span class="w-3 h-3 rounded-full bg-yellow-500/50"></span>
           <span class="w-3 h-3 rounded-full bg-green-500/50"></span>
       </div>
-    </div>
 
-    <div class="code-content p-4 rounded-b-lg w-full">
-      <div class="code-line" v-for="(line, index) in displayedLines" :key="index">
-        <span class="line-number text-gray-500 mr-4 select-none pe-2">{{ index + 1 }}</span>
-        <span class="code-text text-white" v-html="highlightSyntax(line)"></span>
-        <span
-          class="cursor-blink text-white"
-          v-if="currentLine === index && cursorVisible"
-        >|</span>
+      <div class="code-content p-4 rounded-b-lg w-full">
+        <div class="code-line" v-for="(line, index) in displayedLines" :key="index">
+          <span class="line-number text-gray-500 mr-4 select-none pe-2">{{ index + 1 }}</span>
+          <span class="code-text text-white" v-html="highlightSyntax(line)"></span>
+          <span
+            class="cursor-blink"
+            v-if="
+              ((currentLine === index && !animationFinished) ||
+                (animationFinished && index === displayedLines.length - 1)) &&
+              cursorVisible
+            "
+            >|</span
+          >
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script lang="ts" setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
-interface Developer {
-  name: string;
-  role: string;
-  skills: string[];
-  passion: string;
-  available: boolean;
-}
+// interface Developer {
+//   name: string;
+//   role: string;
+//   skills: string[];
+//   passion: string;
+//   available: boolean;
+// }
 
 const fullCode = `const developer = {
   name: 'Jessie Josue Canchola Romero',
@@ -67,18 +71,21 @@ const currentChar = ref<number>(0);
 const cursorVisible = ref<boolean>(true);
 let animationInterval: number;
 let cursorInterval: number;
+const animationFinished = ref(false);
 
 // Resaltado de sintaxis
 const highlightSyntax = (line: string): string => {
-  return line
-    // Comentarios primero (son muy específicos)
-    .replace(/\/\/.*$/g, '<span class="text-green-500">$&</span>')
-    // Strings entre comillas (también muy específicos)
-    .replace(/(['"].*?['"])/g, '<span class="text-yellow-300">$1</span>')
-    // Palabras clave
-    .replace(/(const|let|var|true|false)/g, '<span class="text-purple-400">$1</span>')
-    // Símbolos especiales
-    .replace(/([{}[\],:;])/g, '<span class="text-blue-400">$1</span>');
+  return (
+    line
+      // Comentarios primero (son muy específicos)
+      .replace(/\/\/.*$/g, '<span class="text-green-500">$&</span>')
+      // Strings entre comillas (también muy específicos)
+      .replace(/(['"].*?['"])/g, '<span class="text-yellow-300">$1</span>')
+      // Palabras clave
+      .replace(/(const|let|var|true|false)/g, '<span class="text-purple-400">$1</span>')
+      // Símbolos especiales
+      .replace(/([{}[\],:;])/g, '<span class="text-blue-400">$1</span>')
+  );
 };
 
 // Efecto de escritura línea por línea
@@ -98,6 +105,7 @@ const typeNextLine = (): void => {
       currentChar.value = 0;
     }
   } else {
+    animationFinished.value = true;
     clearInterval(animationInterval);
   }
 };
@@ -122,11 +130,11 @@ onUnmounted(() => {
 .code-container {
   background: rgba(2, 6, 23, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   box-shadow:
-    0 0 60px rgba(16,185,129,0.15),
-    0 10px 40px rgba(0,0,0,0.6);
+    0 0 60px rgba(16, 185, 129, 0.15),
+    0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
 .code-content {
@@ -157,7 +165,12 @@ onUnmounted(() => {
 }
 
 @keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 </style>
