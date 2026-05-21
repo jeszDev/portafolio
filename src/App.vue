@@ -38,7 +38,7 @@
           <AboutIcon />
         </span>
         <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Sobre mí
+          Acerca de mí
         </span>
       </div>
       <span class="nav-gamer-tag">02</span>
@@ -51,7 +51,7 @@
           <AboutIcon />
         </span>
         <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Sobre mí
+          Experiencia
         </span>
       </div>
       <span class="nav-gamer-tag">02</span>
@@ -107,15 +107,15 @@
         <ExperiencePage />
       </section>
 
-      <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section4')">
+      <!-- <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section4')">
         <AboutPage />
-      </section>
+      </section> -->
 
-      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section5')">
+      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section4')">
         <ProjectsPage />
       </section>
 
-      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section6')">
+      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section5')">
         <ContactPage />
       </section>
     </main>
