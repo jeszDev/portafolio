@@ -48,13 +48,13 @@
       <div class="nav-gamer-bg"></div>
       <div class="flex items-center gap-3 relative z-10">
         <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <AboutIcon />
+          <ExperienceIcon />
         </span>
         <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
           Experiencia
         </span>
       </div>
-      <span class="nav-gamer-tag">02</span>
+      <span class="nav-gamer-tag">03</span>
     </button>
 
     <button @click="scrollToSection('section4')" class="nav-gamer-item group">
@@ -67,7 +67,7 @@
           Proyectos
         </span>
       </div>
-      <span class="nav-gamer-tag">03</span>
+      <span class="nav-gamer-tag">04</span>
     </button>
 
     <button @click="scrollToSection('section5')" class="nav-gamer-item group">
@@ -80,7 +80,7 @@
           Contacto
         </span>
       </div>
-      <span class="nav-gamer-tag">04</span>
+      <span class="nav-gamer-tag">05</span>
     </button>
 
   </nav>
@@ -136,6 +136,7 @@ import ContactPage from './sections/ContactPage.vue';
 
 import HomeIcon from './icons/HomeIcon.vue';
 import AboutIcon from './icons/AboutIcon.vue';
+import ExperienceIcon from './icons/ExperienceIcon.vue';
 import ProjectsIcon from './icons/ProjectsIcon.vue';
 import ContactIcon from './icons/ContactIcon.vue';
 import AOS from 'aos';
