@@ -1,21 +1,19 @@
 <template>
-  <!-- Titulo (10%) -->
-  <div class="flex items-center justify-center">
-    <TitleSection title="ACERCA DE MÍ" />
-  </div>
-  <!-- Terminal (90%) -->
-  <div class="">
-    <div class="max-w-3/4 text-slate-300 mb-5">
-    <p>Soy desarrollador web con enfoque en backend, especializado en Laravel y en la construcción de sistemas administrativos y plataformas institucionales.</p>
+  <section class="w-full">
+    <div class="flex justify-center !mb-5">
+      <TitleSection title="ACERCA DE MÍ" data-aos="fade-up" />
+    </div>
 
-    <p>He participado en el desarrollo de aplicaciones para la gestión de procesos, control de información y atención a usuarios, trabajando con bases de datos relacionales y flujos complejos de negocio.</p>
+    <div class="text-slate-300 text-xl text-justify !space-y-4 mb-5 md:px-[250px]">
+      <p>Soy desarrollador web con enfoque en backend, especializado en Laravel y en la construcción de sistemas administrativos y plataformas institucionales.</p>
 
-    <p>Cuento con experiencia en Laravel, PHP, SQL Server, MySQL, Livewire, Alpine.js, Vue.js, JavaScript, Bootstrap y Tailwind. Me enfoco en escribir código claro, escalable y fácil de mantener.</p>
+      <p>He participado en el desarrollo de aplicaciones para la gestión de procesos, control de información y atención a usuarios, trabajando con bases de datos relacionales y flujos complejos de negocio.</p>
 
-    <p>Mi objetivo es seguir creando soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes hacia arquitecturas modernas.</p>
-  </div>
+      <p>Cuento con experiencia en Laravel, PHP, SQL Server, MySQL, Livewire, Alpine.js, Vue.js, JavaScript, Bootstrap y Tailwind. Me enfoco en escribir código claro, escalable y fácil de mantener.</p>
 
-  </div>
+      <p>Mi objetivo es seguir creando soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes hacia arquitecturas modernas.</p>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
