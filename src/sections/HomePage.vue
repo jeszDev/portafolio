@@ -10,7 +10,7 @@ const scrollToProjects = () => {
 <template>
   <div class="w-full gamer-mode py-12">
     <!-- <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative"> -->
-      <div class="grid md:grid-cols-2 px-12">
+      <div class="grid gap-8 md:grid-cols-2 px-8 md:px-12">
         <div class="relative">
           <div
             class="absolute -top-16 -left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
@@ -45,9 +45,9 @@ const scrollToProjects = () => {
           </div>
         </div>
         <div class="" data-aos="zoom-in-left">
-          <div
-            class="opacity-20 group-hover:opacity-40 transition-opacity"
-          ></div>
+          <!-- <div
+            class="opacity-90 group-hover:opacity-40 transition-opacity"
+          ></div> -->
           <DeveloperTerminal />
         </div>
       </div>
