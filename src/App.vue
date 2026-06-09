@@ -1,6 +1,105 @@
 <template>
   <div class="flex bg-neutral-950 text-white">
     <!-- SIDEBAR -->
+
+    <div
+      class="md:hidden fixed top-0 left-0 right-0 h-16 bg-neutral-950/80 backdrop-blur-md border-b border-white/10 z-50 flex items-center justify-between px-6"
+    >
+      <LogoTitle />
+
+      <button
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
+        class="text-cyan-400 hover:text-cyan-300 focus:outline-none z-50 p-2 transition-colors"
+      >
+        <svg
+          v-if="!isMobileMenuOpen"
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+        <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div
+      v-if="isMobileMenuOpen"
+      class="md:hidden fixed inset-0 bg-neutral-950/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center p-6"
+    >
+      <nav
+        class="flex flex-col gap-4 w-full max-w-xs border border-slate-800 bg-slate-950/60 p-4 rounded-xl shadow-[0_0_30px_rgba(34,211,238,0.15)]"
+      >
+        <div
+          class="text-[10px] font-mono text-cyan-500/60 tracking-[0.3em] uppercase px-3 mb-2 select-none"
+        >
+          :: SELECT_STAGE
+        </div>
+
+        <button @click="scrollToSection('section1')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><HomeIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300">Inicio</span>
+          </div>
+          <span class="nav-gamer-tag">01</span>
+        </button>
+
+        <button @click="scrollToSection('section2')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><AboutIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300"
+              >Acerca de mí</span
+            >
+          </div>
+          <span class="nav-gamer-tag">02</span>
+        </button>
+
+        <button @click="scrollToSection('section3')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><ExperienceIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300"
+              >Experiencia</span
+            >
+          </div>
+          <span class="nav-gamer-tag">03</span>
+        </button>
+
+        <button @click="scrollToSection('section4')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><ProjectsIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300">Proyectos</span>
+          </div>
+          <span class="nav-gamer-tag">04</span>
+        </button>
+
+        <button @click="scrollToSection('section5')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><ContactIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300">Contacto</span>
+          </div>
+          <span class="nav-gamer-tag">05</span>
+        </button>
+      </nav>
+    </div>
+
     <aside
       class="w-64 h-screen hidden md:flex md:flex-col fixed justify-between p-6 border-r border-white/10 bg-neutral-950 text-white"
     >
@@ -12,82 +111,98 @@
       </div>
 
       <!-- NAV -->
-      <nav class="flex flex-col gap-4 p-4 border border-slate-800 bg-slate-950/60 backdrop-blur-md rounded-xl max-w-xs shadow-[0_0_20px_rgba(0,0,0,0.8)]">
+      <nav
+        class="flex flex-col gap-4 p-4 border border-slate-800 bg-slate-950/60 backdrop-blur-md rounded-xl max-w-xs shadow-[0_0_20px_rgba(0,0,0,0.8)]"
+      >
+        <div
+          class="text-[10px] font-mono text-cyan-500/60 tracking-[0.3em] uppercase px-3 mb-2 select-none"
+        >
+          :: SELECT_STAGE
+        </div>
 
-    <div class="text-[10px] font-mono text-cyan-500/60 tracking-[0.3em] uppercase px-3 mb-2 select-none">
-      :: SELECT_STAGE
-    </div>
+        <button @click="scrollToSection('section1')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <HomeIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Inicio
+            </span>
+          </div>
+          <span class="nav-gamer-tag">01</span>
+        </button>
 
-    <button @click="scrollToSection('section1')" class="nav-gamer-item group cursor-pointer">
-      <div class="nav-gamer-bg"></div>
-      <div class="flex items-center gap-3 relative z-10">
-        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <HomeIcon />
-        </span>
-        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Inicio
-        </span>
-      </div>
-      <span class="nav-gamer-tag">01</span>
-    </button>
+        <button @click="scrollToSection('section2')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <AboutIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Acerca de mí
+            </span>
+          </div>
+          <span class="nav-gamer-tag">02</span>
+        </button>
 
-    <button @click="scrollToSection('section2')" class="nav-gamer-item group cursor-pointer">
-      <div class="nav-gamer-bg"></div>
-      <div class="flex items-center gap-3 relative z-10">
-        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <AboutIcon />
-        </span>
-        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Acerca de mí
-        </span>
-      </div>
-      <span class="nav-gamer-tag">02</span>
-    </button>
+        <button @click="scrollToSection('section3')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <ExperienceIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Experiencia
+            </span>
+          </div>
+          <span class="nav-gamer-tag">03</span>
+        </button>
 
-    <button @click="scrollToSection('section3')" class="nav-gamer-item group cursor-pointer">
-      <div class="nav-gamer-bg"></div>
-      <div class="flex items-center gap-3 relative z-10">
-        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <ExperienceIcon />
-        </span>
-        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Experiencia
-        </span>
-      </div>
-      <span class="nav-gamer-tag">03</span>
-    </button>
+        <button @click="scrollToSection('section4')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <ProjectsIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Proyectos
+            </span>
+          </div>
+          <span class="nav-gamer-tag">04</span>
+        </button>
 
-    <button @click="scrollToSection('section4')" class="nav-gamer-item group cursor-pointer">
-      <div class="nav-gamer-bg"></div>
-      <div class="flex items-center gap-3 relative z-10">
-        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <ProjectsIcon />
-        </span>
-        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Proyectos
-        </span>
-      </div>
-      <span class="nav-gamer-tag">04</span>
-    </button>
-
-    <button @click="scrollToSection('section5')" class="nav-gamer-item group cursor-pointer">
-      <div class="nav-gamer-bg"></div>
-      <div class="flex items-center gap-3 relative z-10">
-        <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
-          <ContactIcon />
-        </span>
-        <span class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors">
-          Contacto
-        </span>
-      </div>
-      <span class="nav-gamer-tag">05</span>
-    </button>
-
-  </nav>
+        <button @click="scrollToSection('section5')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <ContactIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Contacto
+            </span>
+          </div>
+          <span class="nav-gamer-tag">05</span>
+        </button>
+      </nav>
 
       <footer class="mt-auto pt-6">
-        <div class="flex items-center justify-center gap-2 font-mono text-[10px] text-slate-400 select-none">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"></span>
+        <div
+          class="flex items-center justify-center gap-2 font-mono text-[10px] text-slate-400 select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-500 shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"
+          ></span>
           <span class="tracking-wider">© 2026 // SYSTEM_ACTIVE</span>
         </div>
       </footer>
@@ -97,7 +212,7 @@
     <main
       ref="contentContainer"
       id="scroll-container"
-      class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white"
+      class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white pt-16 md:pt-0"
     >
       <section id="section0" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
@@ -149,6 +264,8 @@ interface SectionRefs {
   [key: string]: HTMLElement | null;
 }
 
+const isMobileMenuOpen = ref(false);
+
 const contentContainer = ref<HTMLElement | null>(null);
 const sectionRefs = ref<SectionRefs>({});
 const activeSection = ref('section1');
@@ -162,6 +279,7 @@ const scrollToSection = (id: string) => {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
     activeSection.value = id;
+    isMobileMenuOpen.value = false;
   }
 };
 
@@ -289,6 +407,4 @@ onBeforeUnmount(() => {
   color: #22d3ee;
   text-shadow: 0 0 4px rgba(34, 211, 238, 0.5);
 }
-
-
 </style>
