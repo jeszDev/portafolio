@@ -1,142 +1,225 @@
 <template>
-  <!-- Titulo (10%) -->
-  <div class="flex items-center justify-center">
-    <TitleSection title="Contactame" />
-  </div>
+  <!-- <div class="flex items-center justify-center">
+    <TitleSection title="Contáctame" />
+  </div> -->
 
-  <!-- Terminal (90%) -->
-  <div class="flex items-center justify-center">
-    <!-- component -->
-    <div class="relative flex items-top justify-center min-h-screen sm:items-center sm:pt-0">
-      <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="mt-8 overflow-hidden">
-          <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg">
-              <h1
-                class="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight"
-              >
-                Get in touch
-              </h1>
-              <p
-                class="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2"
-              >
-                Fill in the form to start a conversation
-              </p>
+  <div class="w-full max-w-6xl mx-auto flex flex-col gap-8 px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-center justify-center mb-4">
+      <TitleSection title="Contacto" />
+    </div>
 
-              <div class="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+    <div
+      class="border border-slate-800 bg-slate-950/60 backdrop-blur-md rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.7)] overflow-hidden relative"
+    >
+      <div
+        class="bg-slate-900/80 border-b border-slate-800 px-4 py-2.5 flex items-center justify-between select-none"
+      >
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
+          <span
+            class="w-2.5 h-2.5 rounded-full bg-cyan-500/70 shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+          ></span>
+          <span class="font-mono text-xs text-slate-500 ml-2 tracking-widest"
+            >CONTACT-INTERFACE.EXE</span
+          >
+        </div>
+        <span class="font-mono text-[10px] text-cyan-500/50 uppercase tracking-wider animate-pulse">
+          [STATUS: READY_TO_TRANSMIT]
+        </span>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-800/60"
+      >
+        <div
+          class="p-8 flex flex-col justify-between gap-8 bg-gradient-to-br from-slate-950/20 to-transparent"
+        >
+          <div>
+            <div class="font-mono text-xs text-cyan-500/70 tracking-[0.2em] uppercase mb-1">
+              :: INITIALIZE_SEQUENCE
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-mono font-bold tracking-tight text-white mb-4">
+              Ponte en contacto<span class="text-cyan-500 animate-pulse">_</span>
+            </h2>
+            <p class="font-mono text-sm text-slate-400 leading-relaxed max-w-sm">
+              Envía una transmisión cifrada llenando el formulario para iniciar una conversación.
+            </p>
+          </div>
+
+          <div class="flex flex-col gap-5 font-mono">
+            <div class="flex items-start group">
+              <div
+                class="p-2 border border-slate-800 bg-slate-900/40 rounded-lg text-cyan-400 group-hover:border-cyan-500/50 group-hover:text-cyan-300 transition-colors"
+              >
                 <svg
                   fill="none"
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
                   stroke-width="1.5"
                   viewBox="0 0 24 24"
-                  class="w-8 h-8 text-gray-500"
+                  class="w-5 h-5"
                 >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                   />
                 </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">
-                  Acme Inc, Street, State, Postal Code
+              </div>
+              <div class="ml-4">
+                <div class="text-[10px] text-slate-500 tracking-wider uppercase">Ubicación</div>
+                <div class="text-sm text-slate-300 group-hover:text-white transition-colors">
+                  Michoacán, México
                 </div>
-              </div>
-
-              <div class="flex items-center mt-4 text-gray-600 dark:text-gray-400">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  class="w-8 h-8 text-gray-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">+44 1234567890</div>
-              </div>
-
-              <div class="flex items-center mt-2 text-gray-600 dark:text-gray-400">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  class="w-8 h-8 text-gray-500"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <div class="ml-4 text-md tracking-wide font-semibold w-40">info@acme.org</div>
               </div>
             </div>
 
-            <form class="p-6 flex flex-col justify-center gap-4">
-              <div class="flex flex-col">
-                <label for="name" class="hidden">Full Name</label>
-                <input
-                  type="name"
-                  name="name"
-                  id="name"
-                  placeholder="Full Name"
-                  class="py-4 bg-white rounded-full px-6 placeholder:text-xs"
-                />
-              </div>
-
-              <div class="flex flex-col mt-2">
-                <label for="email" class="hidden">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  class="py-4 bg-white rounded-full px-6 placeholder:text-xs"
-                />
-              </div>
-
-              <div class="flex flex-col mt-2">
-                <label for="tel" class="hidden">Number</label>
-                <textarea
-                  type="tel"
-                  name="tel"
-                  id="tel"
-                  placeholder="Telephone Number"
-                  class="w-full bg-white rounded-2xl placeholder:text-xs px-6 py-4"
-                ></textarea>
-              </div>
-
-              <div class="flex justify-end">
-                <button
-                  type="submit"
-                  class="md:w-32 bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300"
+            <!-- <div class="flex items-start group">
+              <div
+                class="p-2 border border-slate-800 bg-slate-900/40 rounded-lg text-cyan-400 group-hover:border-cyan-500/50 group-hover:text-cyan-300 transition-colors"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  class="w-5 h-5"
                 >
-                  Enviar
-                </button>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.47-5.112-3.758-6.58-6.58l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                  />
+                </svg>
               </div>
-            </form>
+              <div class="ml-4">
+                <div class="text-[10px] text-slate-500 tracking-wider uppercase">
+                  Red de voz Directa
+                </div>
+                <div class="text-sm text-slate-300 group-hover:text-white transition-colors">
+                  +52 443 123 4567
+                </div>
+              </div>
+            </div> -->
+
+            <div class="flex items-start group">
+              <div
+                class="p-2 border border-slate-800 bg-slate-900/40 rounded-lg text-cyan-400 group-hover:border-cyan-500/50 group-hover:text-cyan-300 transition-colors"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  class="w-5 h-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
+              </div>
+              <div class="ml-4">
+                <div class="text-[10px] text-slate-500 tracking-wider uppercase">
+                  Enlace Seguro (Email)
+                </div>
+                <div class="text-sm text-slate-300 group-hover:text-white transition-colors">
+                  jjcr.dev@gmail.com
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-slate-600 border-t border-slate-900 pt-4">
+            SECURE_CONNECTION // SHA-256 ENCRYPTED
           </div>
         </div>
+
+        <form
+          @submit.prevent="handleSubmit"
+          class="p-8 flex flex-col justify-center gap-5 font-mono"
+        >
+          <div class="flex flex-col gap-1.5 relative group">
+            <label
+              for="name"
+              class="text-[10px] text-slate-500 tracking-wider uppercase group-focus-within:text-cyan-400 transition-colors"
+            >
+              [01] Nombre del jugador:
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              placeholder="Ingresa tu identidad o alias"
+              class="w-full bg-slate-950/80 border border-slate-800 focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 text-white placeholder:text-slate-600 text-sm px-4 py-3.5 outline-none rounded-lg transition-all"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5 relative group">
+            <label
+              for="email"
+              class="text-[10px] text-slate-500 tracking-wider uppercase group-focus-within:text-cyan-400 transition-colors"
+            >
+              [02] Contacto del jugador (correo electrónico):
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="tu-correo@servidor.com"
+              class="w-full bg-slate-950/80 border border-slate-800 focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 text-white placeholder:text-slate-600 text-sm px-4 py-3.5 outline-none rounded-lg transition-all"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1.5 relative group">
+            <label
+              for="message"
+              class="text-[10px] text-slate-500 tracking-wider uppercase group-focus-within:text-cyan-400 transition-colors"
+            >
+              [03] Mensaje del jugador:
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              required
+              placeholder="Escribe tu propuesta, dudas o líneas de transmisión aquí..."
+              class="w-full bg-slate-950/80 border border-slate-800 focus:border-cyan-500/80 focus:ring-1 focus:ring-cyan-500/30 text-white placeholder:text-slate-600 text-sm px-4 py-3.5 outline-none rounded-lg resize-none transition-all"
+            ></textarea>
+          </div>
+
+          <div class="flex justify-end mt-2">
+            <button
+              type="submit"
+              class="nav-gamer-submit-btn group relative px-6 py-3 bg-cyan-500 text-slate-950 font-bold text-xs tracking-widest uppercase cursor-pointer transition-all hover:bg-cyan-400 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+            >
+              <div class="flex items-center gap-2 relative z-10">
+                <span>Transmitir Datos</span>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                  class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -144,6 +227,16 @@
 
 <script setup lang="ts">
 import TitleSection from '../components/TitleSection.vue';
+
+const handleSubmit = () => {
+  // Aquí puedes integrar EmailJS, Formspree o tu propio backend
+  console.log('Transmisión inicializada...');
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Estilo recortado poligonal personalizado para el botón de envío */
+.nav-gamer-submit-btn {
+  clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 12% 100%, 0 70%);
+}
+</style>
