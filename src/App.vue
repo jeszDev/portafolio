@@ -229,7 +229,6 @@ onBeforeUnmount(() => {
   position: relative;
   display: flex;
   align-items: center;
-  justify-between;
   padding: 0.75rem 1rem;
   width: 100%;
   font-family: 'JetBrains Mono', monospace;
