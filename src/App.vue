@@ -214,15 +214,15 @@
       id="scroll-container"
       class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white pt-16 md:pt-0"
     >
-      <section id="section0" class="section" :ref="(el) => setSectionRef(el, 'section1')">
+      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
       </section>
 
-      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section2')">
+      <section id="section2" class="section" :ref="(el) => setSectionRef(el, 'section2')">
         <AboutMePage />
       </section>
 
-      <section id="section1" class="section" :ref="(el) => setSectionRef(el, 'section3')">
+      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section3')">
         <ExperiencePage />
       </section>
 
@@ -230,11 +230,11 @@
         <AboutPage />
       </section> -->
 
-      <section id="section3" class="section" :ref="(el) => setSectionRef(el, 'section4')">
+      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section4')">
         <ProjectsPage />
       </section>
 
-      <section id="section4" class="section" :ref="(el) => setSectionRef(el, 'section5')">
+      <section id="section5" class="section" :ref="(el) => setSectionRef(el, 'section5')">
         <ContactPage />
       </section>
     </main>
