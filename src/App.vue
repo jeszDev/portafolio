@@ -92,10 +92,19 @@
         <button @click="scrollToSection('section5')" class="nav-gamer-item group cursor-pointer">
           <div class="nav-gamer-bg"></div>
           <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400"><EducationIcon /></span>
+            <span class="font-mono text-sm tracking-wider uppercase text-slate-300">Educación</span>
+          </div>
+          <span class="nav-gamer-tag">05</span>
+        </button>
+
+        <button @click="scrollToSection('section6')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
             <span class="icon-container text-cyan-400"><ContactIcon /></span>
             <span class="font-mono text-sm tracking-wider uppercase text-slate-300">Contacto</span>
           </div>
-          <span class="nav-gamer-tag">05</span>
+          <span class="nav-gamer-tag">06</span>
         </button>
       </nav>
     </div>
@@ -184,6 +193,21 @@
           <div class="nav-gamer-bg"></div>
           <div class="flex items-center gap-3 relative z-10">
             <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
+              <EducationIcon />
+            </span>
+            <span
+              class="font-mono text-sm tracking-wider uppercase text-slate-300 group-hover:text-white transition-colors"
+            >
+              Educación
+            </span>
+          </div>
+          <span class="nav-gamer-tag">05</span>
+        </button>
+
+        <button @click="scrollToSection('section6')" class="nav-gamer-item group cursor-pointer">
+          <div class="nav-gamer-bg"></div>
+          <div class="flex items-center gap-3 relative z-10">
+            <span class="icon-container text-cyan-400 group-hover:text-cyan-300">
               <ContactIcon />
             </span>
             <span
@@ -192,7 +216,7 @@
               Contacto
             </span>
           </div>
-          <span class="nav-gamer-tag">05</span>
+          <span class="nav-gamer-tag">06</span>
         </button>
       </nav>
 
@@ -235,6 +259,10 @@
       </section>
 
       <section id="section5" class="section" :ref="(el) => setSectionRef(el, 'section5')">
+        <EducationPage />
+      </section>
+
+      <section id="section6" class="section" :ref="(el) => setSectionRef(el, 'section6')">
         <ContactPage />
       </section>
     </main>
@@ -251,12 +279,14 @@ import AboutMePage from './sections/AboutMePage.vue';
 import ExperiencePage from './sections/ExperiencePage.vue';
 import AboutPage from './sections/AboutPage.vue';
 import ProjectsPage from './sections/ProjectsPage.vue';
+import EducationPage from './sections/EducationPage.vue';
 import ContactPage from './sections/ContactPage.vue';
 
 import HomeIcon from './icons/HomeIcon.vue';
 import AboutIcon from './icons/AboutIcon.vue';
 import ExperienceIcon from './icons/ExperienceIcon.vue';
 import ProjectsIcon from './icons/ProjectsIcon.vue';
+import EducationIcon from './icons/EducationIcon.vue';
 import ContactIcon from './icons/ContactIcon.vue';
 import AOS from 'aos';
 
