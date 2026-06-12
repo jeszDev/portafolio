@@ -27,6 +27,12 @@
           <p>
             <span class="text-cyan-400 font-bold">&gt;</span> Mi objetivo es seguir creando soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes hacia arquitecturas modernas y de alta velocidad.
           </p>
+
+          <div class="pt-4 flex justify-start">
+            <a href="/cv.pdf" target="_blank" download="CV_Jesús.pdf" class="btn-cv-dossier cursor-pointer">
+              <span class="text-cyan-400 font-bold">&gt;</span> [DESCARGAR_DOSSIER_CV.PDF]
+            </a>
+          </div>
         </div>
       </div>
 
@@ -77,6 +83,28 @@ import TitleSection from '../components/TitleSection.vue';
 .data-file-card {
   box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.03), 0 10px 30px rgba(0,0,0,0.5);
   clip-path: polygon(0 0, 96% 0, 100% 6%, 100% 100%, 0 100%);
+}
+
+.btn-cv-dossier {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px dashed rgba(34, 211, 238, 0.3);
+  background: rgba(34, 211, 238, 0.05);
+  color: #22d3ee;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  clip-path: polygon(0 0, 95% 0, 100% 25%, 100% 100%, 5% 100%, 0 75%);
+}
+
+.btn-cv-dossier:hover {
+  border-color: #22d3ee;
+  background: rgba(34, 211, 238, 0.15);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.3);
+  transform: translateX(4px);
 }
 
 /* Tarjeta de Inventario de Habilidades */

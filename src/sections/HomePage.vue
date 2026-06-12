@@ -37,6 +37,10 @@ const scrollToProjects = () => {
                 <span class="btn-glitch-content">_VER_PROYECTOS</span>
                 <span class="btn-tag">R1</span>
               </button>
+              <a href="/cv.pdf" target="_blank" download="CV_Jesús.pdf" class="btn-gamer btn-fuchsia cursor-pointer flex items-center">
+                <span class="btn-glitch-content">_DESCARGAR_CV</span>
+                <span class="btn-tag">X</span>
+              </a>
               <button @click="$emit('scrollToContact')" class="btn-gamer btn-outline cursor-pointer">
                 <span class="btn-glitch-content">_CONTACTO</span>
                 <span class="btn-tag">L1</span>
@@ -96,6 +100,19 @@ const scrollToProjects = () => {
 .btn-cyan:hover {
   background: #fff;
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+  transform: skewX(-5deg);
+}
+
+.btn-fuchsia {
+  background: rgba(217, 70, 239, 0.2);
+  border: 1px solid #d946ef;
+  color: #f5d0fe;
+}
+
+.btn-fuchsia:hover {
+  background: #d946ef;
+  color: #000;
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.6);
   transform: skewX(-5deg);
 }
 
