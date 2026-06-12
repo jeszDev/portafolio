@@ -270,8 +270,8 @@ const contentContainer = ref<HTMLElement | null>(null);
 const sectionRefs = ref<SectionRefs>({});
 const activeSection = ref('section1');
 
-const setSectionRef = (el: HTMLElement | null, id: string) => {
-  sectionRefs.value[id] = el;
+const setSectionRef = (el: any, id: string) => {
+  sectionRefs.value[id] = el as HTMLElement | null;
 };
 
 const scrollToSection = (id: string) => {
