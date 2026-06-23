@@ -219,17 +219,15 @@ const scrollToSection = (id: string) => {
 };
 
 const handleScroll = () => {
-  if (!contentContainer.value) return;
-
-  const scrollPosition = contentContainer.value.scrollTop + window.innerHeight / 2;
+  const viewportCenter = window.innerHeight / 2;
 
   for (const [id, section] of Object.entries(sectionRefs.value)) {
     if (!section) continue;
 
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
+    const rect = section.getBoundingClientRect();
 
-    if (scrollPosition >= top && scrollPosition <= bottom) {
+    // Si el centro de la pantalla está dentro de los límites de esta sección
+    if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
       activeSection.value = id;
       break;
     }
@@ -245,11 +243,13 @@ const onScroll = () => {
 
 onMounted(() => {
   contentContainer.value?.addEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll);
   handleScroll();
 });
 
 onBeforeUnmount(() => {
   contentContainer.value?.removeEventListener('scroll', onScroll);
+  window.removeEventListener('scroll', onScroll);
 });
 </script>
 
