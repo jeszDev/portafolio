@@ -1,9 +1,6 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 640 512">
-    <!--!Font Awesome Free 6.7.2 - Graduation Cap -->
-    <path
-      fill="currentColor"
-      d="M622.3 234.6L343.8 81.3c-14.8-8.1-32.8-8.1-47.6 0L17.7 234.6c-11.6 6.4-17.7 18.2-17.7 30.7s6.1 24.3 17.7 30.7L112 348.6V416c0 17.7 14.3 32 32 32h352c17.7 0 32-14.3 32-32v-67.4l94.3-52.6c11.6-6.4 17.7-18.2 17.7-30.7s-6.1-24.3-17.7-30.7zM480 400H160v-24.3l136.2 76.1c14.8 8.1 32.8 8.1 47.6 0L480 375.7V400z"
-    />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+    <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+    <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
   </svg>
 </template>
