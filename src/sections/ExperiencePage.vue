@@ -1,5 +1,5 @@
 <template>
-  <section class="w-full py-12 gamer-experience relative max-w-7xl mx-auto">
+  <section class="w-full gamer-experience relative mx-auto">
     <div class="flex justify-center mb-16">
       <TitleSection title="EXPERIENCIA" data-aos="fade-up" />
     </div>
