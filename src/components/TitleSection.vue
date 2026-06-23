@@ -5,7 +5,7 @@
     </span>
 
     <h1
-      class="font-arcade text-xl md:text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 uppercase flex items-center gap-2"
+      class="font-arcade text-xl md:text-4xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 uppercase flex items-center gap-2"
     >
       <span class="text-cyan-500 font-mono">&lt;</span>
       <span class="text-white">{{ title }}</span>
@@ -25,6 +25,6 @@ defineProps<Props>();
 
 <style scoped>
 .font-arcade {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Share Tech Mono', 'Orbitron', 'Press Start 2P', cursive;
 }
 </style>
