@@ -1,13 +1,14 @@
 <template>
-  <section class="w-full py-12 gamer-about relative overflow-hidden">
+  <section class="w-full py-12 gamer-about relative overflow-hidden max-w-7xl mx-auto px-4">
     <div class="flex justify-center !mb-12">
       <TitleSection title="ACERCA DE MÍ" data-aos="fade-up" />
     </div>
 
-    <div class="flex justify-center gap-8 px-4">
-
+    <!-- Contenedor principal responsivo -->
+    <div class="flex flex-col lg:flex-row justify-center gap-8 items-stretch">
+      <!-- TARJETA: DOSSIER PRINCIPAL -->
       <div
-        class="data-file-card p-6 rounded-xl border border-slate-800 bg-slate-950/40 backdrop-blur-md relative md:w-4xl"
+        class="data-file-card p-6 rounded-xl border border-slate-800 bg-slate-950/40 backdrop-blur-md relative flex-1"
         data-aos="fade-right"
       >
         <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyan-400"></div>
@@ -15,55 +16,140 @@
           // SUBJECT_DOSSIER: JESZDEV_INIT
         </span>
 
-        <div class="text-slate-300 font-mono text-base !space-y-4 leading-relaxed text-justify">
+        <!-- METADATOS DE TERMINAL (Añade densidad visual y rompe la monotonía) -->
+        <div
+          class="grid grid-cols-2 gap-2 mb-6 p-3 bg-slate-950/60 border border-slate-900 rounded font-mono text-xs text-slate-400"
+        >
+          <div><span class="text-cyan-500">OPERATIVO:</span> Jessie J. Canchola</div>
+          <div><span class="text-cyan-500">CLASE:</span> Full Stack Dev</div>
+          <div><span class="text-cyan-500">BACKEND_CORE:</span> Laravel / PHP</div>
+          <div><span class="text-cyan-500">DATA_MIG:</span> SQL / Relational</div>
+        </div>
+
+        <div class="text-slate-300 font-mono text-sm !space-y-4 leading-relaxed text-justify">
           <p>
-            <span class="text-cyan-400 font-bold">&gt;</span> Soy desarrollador web con enfoque en backend, especializado en <span class="text-white font-bold">Laravel</span> y en la construcción de sistemas administrativos y plataformas institucionales.
+            <span class="text-cyan-400 font-bold">&gt;</span> Soy desarrollador web con enfoque en
+            backend, especializado en <span class="text-white font-bold">Laravel</span> y en la
+            construcción de sistemas administrativos y plataformas institucionales.
           </p>
 
           <p>
-            <span class="text-cyan-400 font-bold">&gt;</span> He participado en el desarrollo de aplicaciones para la gestión de procesos, control de información y atención a usuarios, trabajando con bases de datos relacionales y flujos complejos de negocio.
+            <span class="text-cyan-400 font-bold">&gt;</span> He participado en el desarrollo de
+            aplicaciones para la gestión de procesos, control de información y atención a usuarios,
+            optimizando bases de datos y flujos complejos de negocio.
           </p>
 
           <p>
-            <span class="text-cyan-400 font-bold">&gt;</span> Mi objetivo es seguir creando soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes hacia arquitecturas modernas y de alta velocidad.
+            <span class="text-cyan-400 font-bold">&gt;</span> Mi objetivo es seguir creando
+            soluciones robustas que resuelvan problemas reales y evolucionar sistemas existentes
+            hacia arquitecturas modernas y de alta velocidad.
           </p>
 
           <div class="pt-4 flex justify-start">
-            <a href="/cv.pdf" target="_blank" download="CV_Jesús.pdf" class="btn-cv-dossier cursor-pointer">
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              download="CV_Jesús.pdf"
+              class="btn-cv-dossier cursor-pointer"
+            >
               <span class="text-cyan-400 font-bold">&gt;</span> [DESCARGAR_DOSSIER_CV.PDF]
             </a>
           </div>
         </div>
       </div>
 
-      <!-- <div
-        class="skills-card p-6 rounded-xl border border-slate-800 bg-slate-950/70 relative"
+      <!-- TARJETA: INVENTARIO DE HABILIDADES (Descomentada y mejorada) -->
+      <div
+        class="skills-card p-6 rounded-xl border border-slate-800 bg-slate-950/70 relative flex-1 lg:max-w-md flex flex-col justify-between"
         data-aos="fade-left"
       >
         <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-fuchsia-500"></div>
-        <span class="text-[9px] font-mono text-fuchsia-500/50 block tracking-[0.2em] uppercase mb-4">
-          // LOADED_EQUIPMENT
-        </span>
 
-        <h3 class="text-white font-mono text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
-          <span class="w-2 h-2 bg-fuchsia-500 animate-pulse"></span>
-          Tech Stack
-        </h3>
+        <div>
+          <span
+            class="text-[9px] font-mono text-fuchsia-500/50 block tracking-[0.2em] uppercase mb-4"
+          >
+            // LOADED_EQUIPMENT
+          </span>
 
-        <div class="flex flex-wrap gap-2">
-          <span class="skill-tag backend">Laravel</span>
-          <span class="skill-tag backend">PHP</span>
-          <span class="skill-tag database">SQL Server</span>
-          <span class="skill-tag database">MySQL</span>
-          <span class="skill-tag frontend">Livewire</span>
-          <span class="skill-tag frontend">Alpine.js</span>
-          <span class="skill-tag frontend">Vue.js</span>
-          <span class="skill-tag frontend">JavaScript</span>
-          <span class="skill-tag styles">Tailwind</span>
-          <span class="skill-tag styles">Bootstrap</span>
+          <h3
+            class="text-white font-mono text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2"
+          >
+            <span class="w-2 h-2 bg-fuchsia-500 animate-pulse"></span>
+            INVENTARIO_DE_ARMAS
+          </h3>
+
+          <!-- Cambiamos flex por un grid ordenado estilo ranuras de juego -->
+          <div class="grid grid-cols-2 gap-3">
+            <!-- Ítem Legendario / Principal -->
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-amber-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-amber-500 font-bold block text-[9px] tracking-wider"
+                >LEGENDARY</span
+              >
+              <span class="text-slate-200 font-bold">Laravel</span>
+            </div>
+
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-amber-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-amber-500 block text-[9px] tracking-wider">LEGENDARY</span>
+              <span class="text-slate-200 font-bold">PHP</span>
+            </div>
+
+            <!-- Ítems Épicos -->
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-fuchsia-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-fuchsia-500 block text-[9px] tracking-wider">EPIC</span>
+              <span class="text-slate-300">MySQL</span>
+            </div>
+
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-fuchsia-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-fuchsia-500 block text-[9px] tracking-wider">EPIC</span>
+              <span class="text-slate-300">SQL Server</span>
+            </div>
+
+            <!-- Ítems Raros / Soporte -->
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-cyan-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-cyan-500 block text-[9px] tracking-wider">RARE</span>
+              <span class="text-slate-300">Livewire</span>
+            </div>
+
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-cyan-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-cyan-500 block text-[9px] tracking-wider">RARE</span>
+              <span class="text-slate-300">Vue.js</span>
+            </div>
+
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-cyan-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-cyan-500 block text-[9px] tracking-wider">RARE</span>
+              <span class="text-slate-300">Alpine.js</span>
+            </div>
+
+            <div
+              class="p-2 bg-slate-900/80 border-l-4 border-slate-500 border-y border-r border-slate-800 rounded font-mono text-xs"
+            >
+              <span class="text-slate-500 block text-[9px] tracking-wider">COMMON</span>
+              <span class="text-slate-400">Tailwind</span>
+            </div>
+          </div>
         </div>
-      </div> -->
 
+        <div
+          class="mt-6 pt-4 border-t border-slate-900 font-mono text-[10px] text-slate-500 hidden sm:block"
+        >
+          STATUS: READY_TO_DEPLOY // 2026_UPDATED
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -81,7 +167,9 @@ import TitleSection from '../components/TitleSection.vue';
 
 /* Tarjeta de Expediente Principal */
 .data-file-card {
-  box-shadow: inset 0 0 20px rgba(34, 211, 238, 0.03), 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0 0 20px rgba(34, 211, 238, 0.03),
+    0 10px 30px rgba(0, 0, 0, 0.5);
   clip-path: polygon(0 0, 96% 0, 100% 6%, 100% 100%, 0 100%);
 }
 
@@ -109,7 +197,9 @@ import TitleSection from '../components/TitleSection.vue';
 
 /* Tarjeta de Inventario de Habilidades */
 .skills-card {
-  box-shadow: inset 0 0 20px rgba(240, 46, 170, 0.03), 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0 0 20px rgba(240, 46, 170, 0.03),
+    0 10px 30px rgba(0, 0, 0, 0.5);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%, 0 92%);
 }
 
