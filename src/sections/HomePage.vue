@@ -10,58 +10,60 @@ const scrollToProjects = () => {
 <template>
   <div class="w-full gamer-mode py-12">
     <!-- <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative"> -->
-      <div class="grid gap-8 md:grid-cols-2 px-8 md:px-12">
-        <div class="relative">
-          <div
-            class="absolute -top-16 -left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
-          >
-            System.initialize(jeszDev)... <br />
-            Loading_Assets... [OK] <br />
-            Framework: Vue_3.x
+    <div class="grid gap-8 md:grid-cols-2 px-8 md:px-12">
+      <div class="relative">
+        <div
+          class="absolute -top-16 -left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
+        >
+          System.initialize(jeszDev)... <br />
+          Loading_Assets... [OK] <br />
+          Framework: Vue_3.x
+        </div>
+        <div class="" data-aos="fade-right">
+          <div class="relative inline-block !mb-12">
+            <h1 class="text-4xl md:text-6xl font-black italic tracking-tighter leading-none">
+              Hola, soy
+              <!-- <br /> -->
+              <span class="text-glitch" data-text="jeszDev">
+                <!-- <LogoTitle /> -->
+                jeszDev
+              </span>
+            </h1>
+            <div class="h-1 w-24 bg-cyan-400 mt-4 shadow-[0_0_15px_rgba(34,211,238,0.8)]"></div>
           </div>
-          <div class="" data-aos="fade-right">
-            <div class="relative inline-block !mb-12">
-              <h1
-                class="text-4xl md:text-6xl font-black italic tracking-tighter leading-none"
-              >
-                Hola, soy <!-- <br /> -->
-                <span class="text-glitch" data-text="jeszDev">
-                  <!-- <LogoTitle /> -->
-                  jeszDev
-                </span>
-              </h1>
-              <div class="h-1 w-24 bg-cyan-400 mt-4 shadow-[0_0_15px_rgba(34,211,238,0.8)]"></div>
-            </div>
-            <div class="flex flex-wrap gap-6">
-              <button @click="scrollToProjects" class="btn-gamer btn-cyan cursor-pointer">
-                <span class="btn-glitch-content">_VER_PROYECTOS</span>
-                <span class="btn-tag">R1</span>
-              </button>
-              <a href="/cv.pdf" target="_blank" download="CV_Jesús.pdf" class="btn-gamer btn-fuchsia cursor-pointer flex items-center">
-                <span class="btn-glitch-content">_DESCARGAR_CV</span>
-                <span class="btn-tag">X</span>
-              </a>
-              <button @click="$emit('scrollToContact')" class="btn-gamer btn-outline cursor-pointer">
+          <div class="flex flex-wrap gap-6">
+            <button @click="scrollToProjects" class="btn-gamer btn-cyan cursor-pointer">
+              <span class="btn-glitch-content">_VER_PROYECTOS</span>
+              <span class="btn-tag">R1</span>
+            </button>
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              download=";eszDev_cv.pdf"
+              class="btn-gamer btn-fuchsia cursor-pointer flex items-center"
+            >
+              <span class="btn-glitch-content">_DESCARGAR_CV</span>
+              <span class="btn-tag">X</span>
+            </a>
+            <!-- <button @click="$emit('scrollToContact')" class="btn-gamer btn-outline cursor-pointer">
                 <span class="btn-glitch-content">_CONTACTO</span>
                 <span class="btn-tag">L1</span>
-              </button>
-            </div>
+              </button> -->
           </div>
         </div>
-        <div class="" data-aos="zoom-in-left">
-          <!-- <div
+      </div>
+      <div class="" data-aos="zoom-in-left">
+        <!-- <div
             class="opacity-90 group-hover:opacity-40 transition-opacity"
           ></div> -->
-          <DeveloperTerminal />
-        </div>
+        <DeveloperTerminal />
       </div>
+    </div>
     <!-- </div> -->
   </div>
 </template>
 
 <style scoped>
-
-
 .gamer-mode {
   font-family: 'Space Grotesk', sans-serif;
   color: #fff;
