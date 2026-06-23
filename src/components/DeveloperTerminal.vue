@@ -54,6 +54,7 @@ const fullCode = `const developer = {
     'Alpine Js',
     'Bases de datos relacionales (MySQL / SQL Server)'
     'CSS/Tailwind',
+    'Git',
     'HTML5',
     'JavaScript',
     'Laravel',
