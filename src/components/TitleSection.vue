@@ -4,10 +4,12 @@
       // LOCATION: {{ title }}
     </span>
 
-    <h1 class="font-arcade text-xl md:text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 uppercase flex items-center gap-2">
+    <h1
+      class="font-arcade text-xl md:text-3xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 uppercase flex items-center gap-2"
+    >
       <span class="text-cyan-500 font-mono">&lt;</span>
       <span class="text-white">{{ title }}</span>
-      <span class="text-fuchsia-500 font-mono animate-ping text-xs">■</span>
+      <span class="text-fuchsia-500 font-mono animate-ping text-4xl">/</span>
       <span class="text-cyan-500 font-mono">&gt;</span>
     </h1>
   </div>
