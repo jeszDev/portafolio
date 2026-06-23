@@ -1,11 +1,11 @@
 <template>
-  <section class="w-full py-12 gamer-about relative overflow-hidden max-w-7xl mx-auto px-4">
+  <section class="w-full py-12 gamer-about relative overflow-hidden mx-auto px-4">
     <div class="flex justify-center !mb-12">
       <TitleSection title="ACERCA DE MÍ" data-aos="fade-up" />
     </div>
 
     <!-- Contenedor principal responsivo -->
-    <div class="flex flex-col lg:flex-row justify-center gap-8 items-stretch">
+    <div class="flex flex-col lg:flex-row justify-center gap-8 w-full">
       <!-- TARJETA: DOSSIER PRINCIPAL -->
       <div
         class="data-file-card p-6 rounded-xl border border-slate-800 bg-slate-950/40 backdrop-blur-md relative flex-1"
