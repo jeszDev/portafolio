@@ -54,7 +54,7 @@
           :key="item.id"
           @click="scrollToSection(item.id)"
           class="nav-gamer-item group cursor-pointer"
-          :class="{ 'active': activeSection === item.id }"
+          :class="{ active: activeSection === item.id }"
         >
           <div class="nav-gamer-bg"></div>
           <div class="flex items-center gap-3 relative z-10">
@@ -98,7 +98,7 @@
           :key="item.id"
           @click="scrollToSection(item.id)"
           class="nav-gamer-item group cursor-pointer"
-          :class="{ 'active': activeSection === item.id }"
+          :class="{ active: activeSection === item.id }"
         >
           <div class="nav-gamer-bg"></div>
           <div class="flex items-center gap-3 relative z-10">
@@ -107,7 +107,9 @@
             </span>
             <span
               class="font-mono text-sm tracking-wider uppercase transition-colors"
-              :class="activeSection === item.id ? 'text-white' : 'text-slate-300 group-hover:text-white'"
+              :class="
+                activeSection === item.id ? 'text-white' : 'text-slate-300 group-hover:text-white'
+              "
             >
               {{ item.label }}
             </span>
@@ -134,15 +136,27 @@
       id="scroll-container"
       class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white pt-16 md:pt-0"
     >
-      <section id="section1" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section1')">
+      <section
+        id="section1"
+        class="min-h-[100vh] bg-amber-100"
+        :ref="(el) => setSectionRef(el, 'section1')"
+      >
         <HomePage />
       </section>
 
-      <section id="section2" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section2')">
+      <section
+        id="section2"
+        class="min-h-[100vh] md:p-[4rem]"
+        :ref="(el) => setSectionRef(el, 'section2')"
+      >
         <AboutMePage />
       </section>
 
-      <section id="section3" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section3')">
+      <section
+        id="section3"
+        class="min-h-[100vh] md:p-[4rem]"
+        :ref="(el) => setSectionRef(el, 'section3')"
+      >
         <ExperiencePage />
       </section>
 
@@ -150,15 +164,27 @@
         <AboutPage />
       </section> -->
 
-      <section id="section4" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section4')">
+      <section
+        id="section4"
+        class="min-h-[100vh] md:p-[4rem]"
+        :ref="(el) => setSectionRef(el, 'section4')"
+      >
         <ProjectsPage />
       </section>
 
-      <section id="section5" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section5')">
+      <section
+        id="section5"
+        class="min-h-[100vh] md:p-[4rem]"
+        :ref="(el) => setSectionRef(el, 'section5')"
+      >
         <EducationPage />
       </section>
 
-      <section id="section6" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section6')">
+      <section
+        id="section6"
+        class="min-h-[100vh] md:p-[4rem]"
+        :ref="(el) => setSectionRef(el, 'section6')"
+      >
         <ContactPage />
       </section>
     </main>

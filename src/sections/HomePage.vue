@@ -8,12 +8,12 @@ const scrollToProjects = () => {
 </script>
 
 <template>
-  <div class="w-full gamer-mode py-12">
+  <div class="w-full gamer-mode py-[5rem] md:py-[6rem] md:px-[4rem]">
     <!-- <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative"> -->
-    <div class="grid gap-8 md:grid-cols-2 px-8 md:px-12">
+    <div class="grid gap-8 md:grid-cols-2 px-4 md:px-12">
       <div class="relative">
         <div
-          class="absolute -top-16 -left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
+          class="absolute -top-16 md:-left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
         >
           System.initialize(jeszDev)... <br />
           Loading_Assets... [OK] <br />
