@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center">
     <!-- Contenedor padre (centrado vertical/horizontal) -->
-    <div class="code-container font-mono flex flex-col w-full min-w-scren">
+    <div class="code-container font-mono flex flex-col w-full max-w-2xl">
       <!-- Elimina justify-center/items-center aquí -->
       <div
         class="filename-bar bg-gray-700 px-4 py-2 rounded-t-lg w-full flex items-center justify-between"
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="code-content p-4 rounded-b-lg w-full">
+      <div class="code-content p-4 rounded-b-lg w-full overflow-x-auto">
         <div class="code-line" v-for="(line, index) in displayedLines" :key="index">
           <span class="line-number text-gray-500 mr-4 select-none pe-2">{{ index + 1 }}</span>
           <span class="code-text text-white" v-html="highlightSyntax(line)"></span>
@@ -149,7 +149,7 @@ onUnmounted(() => {
 .code-line {
   min-height: 1.5em;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   white-space: pre;
 }
 
