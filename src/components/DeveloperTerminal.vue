@@ -1,10 +1,8 @@
 <template>
-  <div class="flex items-center justify-center">
-    <!-- Contenedor padre (centrado vertical/horizontal) -->
-    <div class="code-container font-mono flex flex-col w-full max-w-2xl">
-      <!-- Elimina justify-center/items-center aquí -->
+  <div class="w-full max-w-2xl mx-auto md:px-4 box-border">
+    <div class="code-container font-mono flex flex-col w-full overflow-hidden">
       <div
-        class="filename-bar bg-gray-700 px-4 py-2 rounded-t-lg w-full flex items-center justify-between"
+        class="filename-bar bg-gray-700 px-4 py-2 w-full flex items-center justify-between box-border"
       >
         <div class="text-gray-300 text-sm flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" height="18" width="17.5" viewBox="0 0 448 512">
@@ -22,13 +20,29 @@
         </div>
       </div>
 
-      <div class="code-content p-4 rounded-b-lg w-full overflow-x-auto">
-        <div class="code-line" v-for="(line, index) in displayedLines" :key="index">
-          <span class="line-number text-gray-500 mr-4 select-none pe-2">{{ index + 1 }}</span>
-          <span class="code-text text-white" v-html="highlightSyntax(line)"></span>
-          <span class="cursor-blink text-white" v-if="currentLine === index && cursorVisible"
-            >|</span
+      <div class="w-full overflow-x-auto bg-slate-900/40 max-h-[44dvh] md:max-h-fit">
+        <div class="inline-block min-w-full p-4 align-middle box-border">
+          <div
+            class="code-line flex items-start text-sm md:text-base"
+            v-for="(line, index) in displayedLines"
+            :key="index"
           >
+            <span
+              class="line-number text-gray-500 w-8 select-none text-right pr-3 flex-shrink-0 font-mono box-border"
+              >{{ index + 1 }}</span
+            >
+
+            <span
+              class="code-text text-white whitespace-pre font-mono"
+              v-html="highlightSyntax(line)"
+            ></span>
+
+            <span
+              class="cursor-blink text-white flex-shrink-0"
+              v-if="currentLine === index && cursorVisible"
+              >|</span
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -36,15 +50,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-
-interface Developer {
-  name: string;
-  role: string;
-  skills: string[];
-  passion: string;
-  available: boolean;
-}
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const fullCode = `const developer = {
   name: 'Jessie Josue Canchola Romero',
@@ -52,7 +58,10 @@ const fullCode = `const developer = {
   role: 'Full stack developer',
   skills: [
     'Alpine Js',
-    'Bases de datos relacionales (MySQL / SQL Server)'
+    'Bases_de_datos_relacionales: [
+      'MySQL',
+      'SQL Server'
+    ],
     'CSS/Tailwind',
     'Git',
     'HTML5',
@@ -69,7 +78,6 @@ const fullCode = `const developer = {
   ],
 };`;
 
-// Dividir el código en líneas
 const codeLines = fullCode.split('\n');
 const displayedLines = ref<string[]>([]);
 const currentLine = ref<number>(0);
@@ -78,22 +86,14 @@ const cursorVisible = ref<boolean>(true);
 let animationInterval: number;
 let cursorInterval: number;
 
-// Resaltado de sintaxis
 const highlightSyntax = (line: string): string => {
-  return (
-    line
-      // Comentarios primero (son muy específicos)
-      .replace(/\/\/.*$/g, '<span class="text-green-500">$&</span>')
-      // Strings entre comillas (también muy específicos)
-      .replace(/(['"].*?['"])/g, '<span class="text-yellow-300">$1</span>')
-      // Palabras clave
-      .replace(/(const|let|var|true|false)/g, '<span class="text-purple-400">$1</span>')
-      // Símbolos especiales
-      .replace(/([{}[\],:;])/g, '<span class="text-blue-400">$1</span>')
-  );
+  return line
+    .replace(/\/\/.*$/g, '<span class="text-green-500">$&</span>')
+    .replace(/(['"].*?['"])/g, '<span class="text-yellow-300">$1</span>')
+    .replace(/(const|let|var|true|false)/g, '<span class="text-purple-400">$1</span>')
+    .replace(/([{}[\],:;])/g, '<span class="text-blue-400">$1</span>');
 };
 
-// Efecto de escritura línea por línea
 const typeNextLine = (): void => {
   if (currentLine.value < codeLines.length) {
     const line = codeLines[currentLine.value];
@@ -102,7 +102,6 @@ const typeNextLine = (): void => {
       if (displayedLines.value.length <= currentLine.value) {
         displayedLines.value.push('');
       }
-
       displayedLines.value[currentLine.value] = line.substring(0, currentChar.value + 1);
       currentChar.value++;
     } else {
@@ -115,12 +114,10 @@ const typeNextLine = (): void => {
 };
 
 onMounted(() => {
-  // Efecto de cursor intermitente
   cursorInterval = setInterval(() => {
     cursorVisible.value = !cursorVisible.value;
   }, 500) as unknown as number;
 
-  // Iniciar animación de escritura
   animationInterval = setInterval(typeNextLine, 25) as unknown as number;
 });
 
@@ -141,22 +138,9 @@ onUnmounted(() => {
     0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-.code-content {
-  font-family: 'Fira Code', 'Courier New', monospace;
-  counter-reset: line;
-}
-
 .code-line {
   min-height: 1.5em;
-  display: flex;
-  align-items: flex-start;
-  white-space: pre;
-}
-
-.line-number {
-  display: inline-block;
-  width: 2.5em;
-  text-align: right;
+  line-height: 1.5;
 }
 
 .cursor-blink {

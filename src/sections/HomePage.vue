@@ -8,9 +8,9 @@ const scrollToProjects = () => {
 </script>
 
 <template>
-  <div class="w-full gamer-mode py-[5rem] md:py-[6rem] md:px-[4rem]">
+  <div class="w-full min-h-[100vh] gamer-mode py-[5rem] md:pt-[5rem] md:px-[4rem]">
     <!-- <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center relative"> -->
-    <div class="grid gap-8 md:grid-cols-2 px-4 md:px-12">
+    <div class="grid gap-8 md:grid-cols-[40%_60%] px-4 md:px-12">
       <div class="relative">
         <div
           class="absolute -top-16 md:-left-16 opacity-40 select-none pointer-events-none text-xs font-mono uppercase tracking-[0.5em]"
@@ -31,7 +31,7 @@ const scrollToProjects = () => {
             </h1>
             <div class="h-1 w-24 bg-cyan-400 mt-4 shadow-[0_0_15px_rgba(34,211,238,0.8)]"></div>
           </div>
-          <div class="flex flex-wrap gap-6">
+          <div class="flex flex-wrap justify-center gap-6">
             <button @click="scrollToProjects" class="btn-gamer btn-cyan cursor-pointer">
               <span class="btn-glitch-content">_VER_PROYECTOS</span>
               <span class="btn-tag">R1</span>
@@ -46,9 +46,9 @@ const scrollToProjects = () => {
               <span class="btn-tag">X</span>
             </a>
             <!-- <button @click="$emit('scrollToContact')" class="btn-gamer btn-outline cursor-pointer">
-                <span class="btn-glitch-content">_CONTACTO</span>
-                <span class="btn-tag">L1</span>
-              </button> -->
+              <span class="btn-glitch-content">_CONTACTO</span>
+              <span class="btn-tag">L1</span>
+            </button> -->
           </div>
         </div>
       </div>
@@ -57,6 +57,14 @@ const scrollToProjects = () => {
             class="opacity-90 group-hover:opacity-40 transition-opacity"
           ></div> -->
         <DeveloperTerminal />
+
+        <!-- <div class="w-full h-[200px] bg-red-600 p-3.5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis expedita soluta nisi
+            dolore illo dolorum provident nesciunt deleniti, quidem corrupti velit suscipit quae
+            tempora iste, pariatur, aperiam cumque possimus obcaecati!
+          </p>
+        </div> -->
       </div>
     </div>
     <!-- </div> -->

@@ -136,57 +136,53 @@
       id="scroll-container"
       class="w-full h-screen scroll-smooth ml-0 md:!ml-64 !bg-neutral-950 text-white pt-16 md:pt-0"
     >
-      <section
-        id="section1"
-        class="min-h-[100vh] bg-amber-100"
-        :ref="(el) => setSectionRef(el, 'section1')"
-      >
+      <section id="section1" class="min-h-[100vh]" :ref="(el) => setSectionRef(el, 'section1')">
         <HomePage />
       </section>
 
-      <section
+      <!-- <section
         id="section2"
         class="min-h-[100vh] md:p-[4rem]"
         :ref="(el) => setSectionRef(el, 'section2')"
       >
         <AboutMePage />
-      </section>
+      </section> -->
 
-      <section
+      <!-- <section
         id="section3"
         class="min-h-[100vh] md:p-[4rem]"
         :ref="(el) => setSectionRef(el, 'section3')"
       >
         <ExperiencePage />
-      </section>
+      </section> -->
 
       <!-- <section id="section2" class="min-h-[100vh] md:p-[4rem]" :ref="(el) => setSectionRef(el, 'section4')">
         <AboutPage />
       </section> -->
 
-      <section
+      <!-- <section
         id="section4"
         class="min-h-[100vh] md:p-[4rem]"
         :ref="(el) => setSectionRef(el, 'section4')"
       >
         <ProjectsPage />
-      </section>
+      </section> -->
 
-      <section
+      <!-- <section
         id="section5"
         class="min-h-[100vh] md:p-[4rem]"
         :ref="(el) => setSectionRef(el, 'section5')"
       >
         <EducationPage />
-      </section>
+      </section> -->
 
-      <section
+      <!-- <section
         id="section6"
         class="min-h-[100vh] md:p-[4rem]"
         :ref="(el) => setSectionRef(el, 'section6')"
       >
         <ContactPage />
-      </section>
+      </section> -->
     </main>
   </div>
 </template>
