@@ -53,7 +53,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const fullCode = `const developer = {
-  name: 'Jessie Josue Canchola Romero',
+  name: 'Jessie Josue',
   nickname: 'jeszDev',
   role: 'Full stack developer',
   skills: [
@@ -71,9 +71,13 @@ const fullCode = `const developer = {
     'TypeScript',
     'Vue 3',
   ],
-  learning: ['Dart', 'Docker', 'Nuxt'],
+  learning: [
+    'Dart',
+    'Docker',
+    'Nuxt'
+  ],
   passions: [
-    'Building intuitive web experiences',
+    'Building web experiences',
     'Playing fútbol xD'
   ],
 };`;
